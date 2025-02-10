@@ -6,11 +6,10 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ElasticsearchService {
-  private elasticUrl = 'http://localhost:9200'; // Replace with your Elasticsearch URL
+  private elasticUrl = 'http://localhost:9200';
 
   constructor(private http: HttpClient) {}
 
-  // Fetch all data from a specific index
   getCv(indexName: string, searchTerm: string = ''): Observable<any> {
     const query = searchTerm.trim()
       ? {

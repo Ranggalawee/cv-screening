@@ -6,5 +6,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./cv-modal.component.css']
 })
 export class CvModalComponent {
-  @Input() cvData: any;  // Will hold the CV data passed from the parent component
+  @Input() cvData: any;
 }

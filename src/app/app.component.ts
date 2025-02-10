@@ -2,7 +2,6 @@ import { Component, OnInit, TemplateRef } from '@angular/core';
 import { ElasticsearchService } from './service/elasticsearch.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -25,7 +24,7 @@ export class AppComponent implements OnInit {
   }
 
   loadData() {
-    const indexName = 'cvvision'; // Replace with your index name
+    const indexName = 'cvvision';
 
     this.esService.getCv(indexName, this.searchTerm).subscribe({
       next: (response) => {

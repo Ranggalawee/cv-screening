@@ -1,0 +1,65 @@
+<!-- cv-modal.component.html -->
+<div class="modal fade" id="cvModal" tabindex="-1" role="dialog" aria-labelledby="cvModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="cvModalLabel">{{ cvData?.name }}</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p><strong>Gender:</strong> {{ cvData?.gender }}</p>
+          <p><strong>Birthdate:</strong> {{ cvData?.birthdate }}</p>
+          <p><strong>Birthplace:</strong> {{ cvData?.birthplace }}</p>
+          <p><strong>Citizenship:</strong> {{ cvData?.citizenship }}</p>
+          <p><strong>Email:</strong> {{ cvData?.email }}</p>
+          <p><strong>Phone:</strong> {{ cvData?.phone_number }}</p>
+  
+          <h5>Work Experience</h5>
+          <ul>
+            <li *ngFor="let work of cvData?.work_experience">
+              <strong>{{ work.job_title }}</strong> at {{ work.company }} - {{ work.location }}
+              <p>{{ work.job_description }}</p>
+            </li>
+          </ul>
+  
+          <h5>Skills</h5>
+          <ul>
+            <li *ngFor="let skill of cvData?.skills">
+              <strong>{{ skill.title }} ({{ skill.level }})</strong>
+              <p>{{ skill.description }}</p>
+            </li>
+          </ul>
+  
+          <h5>Certifications</h5>
+          <ul>
+            <li *ngFor="let cert of cvData?.certifications">
+              <strong>{{ cert.title }}</strong> - {{ cert.issue_date }} to {{ cert.expired_date }}
+              <p>{{ cert.description }}</p>
+            </li>
+          </ul>
+  
+          <h5>Education</h5>
+          <ul>
+            <li *ngFor="let edu of cvData?.education">
+              <strong>{{ edu.degree }}</strong> from {{ edu.institution }} ({{ edu.startdate }} to {{ edu.enddate }})
+            </li>
+          </ul>
+  
+          <h5>References</h5>
+          <ul>
+            <li *ngFor="let ref of cvData?.references">
+              <strong>{{ ref.name }}</strong> - {{ ref.position }} at {{ ref.institution }}
+              <p>Email: {{ ref.email }}</p>
+              <p>Phone: {{ ref.phone_number }}</p>
+            </li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

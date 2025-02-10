@@ -1,0 +1,150 @@
+.container, .card, .media-body, .info-desc {
+  max-width: 100%;
+}
+
+.search-container {
+  width: 100%;
+  max-width: 600px; /* Adjust to the desired width */
+  margin: 20px auto;
+  padding: 10px; /* Add some padding inside the input to adjust text position */
+}
+
+.search-input {
+  border-radius: 50px; /* Rounded corners */
+  padding-left: 40px; /* Space for the icon */
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  transition: box-shadow 0.3s ease;
+  border: 2px solid #ddd;
+  padding: 10px 20px;
+}
+
+.search-input:focus {
+  border-color: #007bff; /* Blue border when focused */
+  outline: none;
+}
+
+.search-container input::placeholder {
+  text-align: center;
+}
+
+.input-group-text {
+  background-color: #f8f9fa;
+  border-radius: 50px; /* Matching rounded corners */
+  border-left: 0;
+  padding: 10px;
+  font-size: 1.2rem;
+}
+
+.search-input:focus + .input-group-text {
+  border-color: #007bff; /* Blue border for icon when input is focused */
+}
+
+.search-input:hover {
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow on hover */
+}
+  
+.input-group-text {
+  height: 38px;
+}
+
+  .cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .modal-dialog {
+    max-width: 90%; /* Adjust the modal width as needed */
+    max-height: 80vh; /* Set the maximum height of the modal */
+    overflow: hidden;
+  }
+  
+  .modal-body {
+    max-height: 70vh; /* Adjust the height of the modal body */
+    overflow-y: auto; /* Enable vertical scrolling when content overflows */
+  }
+
+  .info-title {
+    font-weight: bold;
+  }
+
+  .info-desc {
+    margin-bottom: 15px;      /* Space below paragraph */
+    padding-left: 15px;       /* Padding on left */
+    padding-right: 15px;      /* Padding on right */
+    line-height: 1.6;         /* Better line spacing */
+    color: #495057;           /* Dark gray text for better readability */
+    background-color: #f8f9fa; /* Light background to reduce strain */
+    font-size: 1rem;           /* Comfortable font size */
+    font-weight: normal;       /* Normal font weight */
+    text-align: justify;
+  }
+
+  .info-dates {
+    font-style: italic;
+  }
+  
+  .card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    cursor: pointer;
+    min-height: 250px; /* Ensures consistent height */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+  }
+  
+  .card:hover {
+    transform: scale(1.05); /* Hover effect */
+    cursor: pointer;
+  }
+  
+  .card h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+  }
+
+  .clickable {
+    cursor: pointer;
+  }
+  
+  svg#clouds {
+    position: fixed;
+    bottom: -160px;
+    left: -230px;
+    z-index: -10;
+    width: 1920px;
+  }
+
+  /* Responsive Styles */
+  @media screen and (max-width: 767px) {
+    .card-container > *:not(.circle-link) ,
+    .terminal {
+      width: 100%;
+    }
+
+    .card:not(.highlight-card) {
+      height: 16px;
+      margin: 8px 0;
+    }
+
+    .card.highlight-card span {
+      margin-left: 72px;
+    }
+
+    svg#rocket-smoke {
+      right: 120px;
+      transform: rotate(-5deg);
+    }
+  }
+
+  @media screen and (max-width: 575px) {
+    svg#rocket-smoke {
+      display: none;
+      visibility: hidden;
+    }
+  }
